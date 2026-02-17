@@ -1,16 +1,42 @@
+
 🌾 AI-Based Crop Recommendation System
 
-A Machine Learning–powered application that recommends the most suitable crop based on soil nutrients and climatic conditions.
 
-Built using Python, Scikit-learn, and Streamlit.
+
+
+
+
+A Machine Learning-powered web application that recommends the most suitable crop based on soil nutrients and climatic conditions.
+
+This project demonstrates an end-to-end ML pipeline including:
+
+Exploratory Data Analysis
+
+Model comparison
+
+Hyperparameter tuning
+
+Feature importance analysis
+
+Model deployment using Streamlit
 
 📌 Problem Statement
 
-Choosing the right crop based on soil and climate conditions is crucial for maximizing agricultural productivity. This project uses machine learning to analyze soil nutrients and environmental factors to recommend the optimal crop.
+Selecting the right crop based on soil and environmental conditions is critical for maximizing agricultural productivity. Traditional decision-making often relies on experience rather than data-driven insights.
+
+This project builds a supervised machine learning model that predicts the most suitable crop using soil nutrients and climate parameters.
 
 📊 Dataset Overview
 
-The dataset contains:
+Total Samples: 2200
+
+Features: 7
+
+Target Classes: Multiple crop categories
+
+Balanced dataset
+
+Input Features:
 
 Nitrogen (N)
 
@@ -26,59 +52,52 @@ pH
 
 Rainfall (mm)
 
-Target: Crop Label
+Target Variable:
 
-Total Samples: 2200
-
-Multiple crop classes
-
-Balanced dataset
+Crop Label
 
 🔎 Exploratory Data Analysis (EDA)
 
-The notebook includes comprehensive analysis:
+Comprehensive analysis was performed to understand feature distribution and relationships.
 
 1️⃣ Nutrient Analysis by Crop
 
-📌 Insight: Different crops require significantly different nitrogen levels.
+Insight: Different crops require significantly different nitrogen levels.
 
-<img width="1389" height="590" alt="Average Nitrogen content for each crop" src="https://github.com/user-attachments/assets/64499545-48d8-4be2-9933-b54a6090a218" />
-
-
-2️⃣ Rainfall Distribution Across Crops
-
-📌 Insight: Rainfall is one of the strongest differentiators among crops.
-
-<img width="1389" height="590" alt="Rainfall Distribution across Crops" src="https://github.com/user-attachments/assets/4d5249ab-a572-4e33-81f4-12ab0fe70746" />
+<img width="1389" height="590" alt="Average Nitrogen content for each crop" src="https://github.com/user-attachments/assets/c73cea72-2138-4ecc-847d-566346750987" />
 
 
-3️⃣ Feature Distribution
+2️⃣ Rainfall Distribution
 
-📌 Insight: Features show varied distributions, some skewed.
+Insight: Rainfall is one of the strongest differentiators among crops.
 
-<img width="1490" height="985" alt="Feature Distribution Analysis" src="https://github.com/user-attachments/assets/906ccd08-0aee-4577-8be4-a095f20eb848" />
+<img width="1389" height="590" alt="Rainfall Distribution across Crops" src="https://github.com/user-attachments/assets/fd5f5b8c-f66f-4d28-aafe-7dabed1ff534" />
 
 
-4️⃣ Correlation Heatmap
+3️⃣ Correlation Heatmap
 
-📌 Insight:
+Insight:
 
 Low multicollinearity
 
-Features are largely independent
+Features largely independent
 
-<img width="892" height="789" alt="Feature Correlation Matrix" src="https://github.com/user-attachments/assets/1f5916cd-4d10-4f7f-b036-11763b5f7d23" />
+<img width="892" height="789" alt="Feature Correlation Matrix" src="https://github.com/user-attachments/assets/3e1ee6d2-af65-41ea-b0c0-5eab559706db" />
 
+4️⃣ Feature Importance (Random Forest)
 
-5️⃣ Temperature vs Humidity Analysis
+Top Influential Features:
 
-📌 Insight:
-Environmental interaction plays a key role in classification.
+Rainfall
 
-<img width="1190" height="790" alt="Temperature vs Humidity by Crop Type" src="https://github.com/user-attachments/assets/85a8322b-7e37-4ec8-80bf-c884a956726c" />
+Humidity
 
+Potassium (K)
 
-🤖 Machine Learning Models Evaluated
+<img width="794" height="659" alt="Feature Importance Distribution" src="https://github.com/user-attachments/assets/3bf0f931-247e-4b06-9654-394c6775334e" />
+
+🤖 Model Development
+Models Evaluated:
 
 Logistic Regression
 
@@ -95,36 +114,35 @@ Accuracy: ~98–99%
 
 Cross-validation applied
 
-Stable across folds
+Stable performance across folds
 
-🔍 Feature Importance:
+High class-level precision & recall
 
-Most influential features:
+Why Random Forest?
 
-Rainfall
+Handles non-linear relationships well
 
-Humidity
+Robust against overfitting
 
-Potassium (K)
-
-<img width="794" height="659" alt="Feature Importance Distribution" src="https://github.com/user-attachments/assets/c4f4e94a-e61e-4ae1-a797-d565f73b0a4a" />
-
+Provides interpretable feature importance
 
 🌐 Web Application (Streamlit)
 
-The system includes an interactive web app where users can:
+The system includes an interactive web interface that allows users to:
 
-Input soil nutrient values
+Enter soil nutrient values
 
-Provide climate parameters
+Provide environmental parameters
 
-Get crop recommendation
+Receive real-time crop recommendations
 
-View confidence score
+View prediction confidence score
 
-See top 3 predictions
+See top 3 suggested crops
 
-View feature importance graph
+Visualize feature importance
+
+<img width="1903" height="862" alt="app_scrnsht_01" src="https://github.com/user-attachments/assets/2c09af95-2111-40ed-b33e-efa6d23c4cf0" />
 
 🛠 Tech Stack
 
@@ -146,14 +164,14 @@ Joblib
 
 📁 Project Structure
 Crop-prediction-project/
-│── app.py
-│── notebook.ipynb
-│── dataset.csv
-│── models/
-│── images/
-│── README.md
-│── requirements.txt
-│── .gitignore
+  │── app.py
+  │── notebook.ipynb
+  │── dataset.csv
+  │── models/
+  │── images/
+  │── README.md
+  │── requirements.txt
+  │── .gitignore
 
 🚀 How to Run
 git clone https://github.com/ragunathan0812/Crop-prediction-project.git
@@ -167,17 +185,15 @@ streamlit run app.py
 
 📌 Future Improvements
 
-Fertilizer recommendation
+Fertilizer recommendation module
 
 Crop yield prediction
 
 Real-time weather API integration
 
-Cloud deployment
+Cloud deployment (Streamlit Cloud / Render)
 
 👨‍💻 Author
 
 Ragunathan
-Machine Learning Enthusiast
-
-
+Machine Learning & Data Science Enthusiast
